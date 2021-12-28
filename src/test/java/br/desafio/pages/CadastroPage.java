@@ -1,7 +1,5 @@
 package br.desafio.pages;
 
-
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,7 +10,7 @@ public class CadastroPage {
 	public static final String URL_DESAFIO = "http://automationpractice.com/index.php";
 	public static final String PRIMEIRO_NOME = "Fulano";
 	public static final String ULTIMO_NOME = "Bartolomeu";
-	public static final String EMAIL = "jasonwu222@bedul.net";
+	public static final String EMAIL = "jasonwu223222@bedul.net";
 	public static final String SENHA = "kaio1310";
 	public static final String RUA = "Abington Lane";
 	public static final String CIDADE = "Dearborn";

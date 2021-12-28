@@ -66,6 +66,7 @@ public class CompraProdutoPage {
 		Actions actionProvider = new Actions(driver);
 		actionProvider.doubleClick(elemento).build().perform();
 	}
+	
 
 	public boolean contemElementoNaPagina(String elemento) {
 		return this.driver.getPageSource().contains(elemento);
@@ -85,6 +86,10 @@ public class CompraProdutoPage {
 	}
 	public String retornaElementoTextoPelaClasse(String classe) {
 		return this.driver.findElement(By.className(classe)).getText();
+	}
+	public void clicarProdutoPeloXpath(String string) {
+		// TODO Auto-generated method stub
+		this.driver.findElement(By.xpath(string)).click();
 	}
 	
 }

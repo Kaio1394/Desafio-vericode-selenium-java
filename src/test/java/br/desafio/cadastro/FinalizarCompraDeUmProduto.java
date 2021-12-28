@@ -19,13 +19,19 @@ private CompraProdutoPage compraPage;
 	}
 	@Test
 	public void realizarCompra() throws InterruptedException {
-		compraPage.clicarProduto("product_img_link");
-		compraPage.clicarBotaoPeloXpath("//*[@id=\"add_to_cart\"]/button");
+//		compraPage.clicarProduto("product_img_link");
 		
-		//Comfirmando que o produto foi adicionado no carrinho
+		//Clicar botão adicionar ao carrinho
+		compraPage.clicarProdutoPeloXpath("//*[@id=\"homefeatured\"]/li[3]/div/div[2]/div[2]/a[1]/span");
+		
+		//Botão adicionar no carrinho
+//		compraPage.clicarBotaoPeloXpath("//*[@id=\"add_to_cart\"]/button");
+		
+		//Confirmando que o produto foi adicionado no carrinho
 		Assert.assertTrue(compraPage.contemElementoNaPagina("Product successfully added to your shopping cart"));
 
-		compraPage.esperaExplicitaAteElementoSerClicavel("//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a");
+		//Botão de checkout
+		compraPage.esperaExplicitaAteElementoSerClicavel("//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a/span");
 		
 		compraPage.clicarBotaoPeloXpath("//*[@id=\"center_column\"]/p[2]/a[1]");
 		compraPage.clicarBotaoPeloNome("processAddress");
@@ -42,6 +48,8 @@ private CompraProdutoPage compraPage;
 		// Confirmação do pagemento
 		Thread.sleep(8000);
 		Assert.assertEquals("BANK-WIRE PAYMENT.", compraPage.retornaElementoTextoPelaClasse("page-subheading"));
+		
+		
 		compraPage.clicarBotaoPeloXpath("//*[@id=\"cart_navigation\"]/button");
 		
 		

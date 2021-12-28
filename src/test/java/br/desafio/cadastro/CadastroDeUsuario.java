@@ -37,23 +37,23 @@ public class CadastroDeUsuario {
 		page.preencherFormularioDeCadastro();
 		
 		//Clicar no botão "Register"
+		Thread.sleep(10000);
 		page.clicarBtnById("submitAccount");		
 		
-		Thread.sleep(10000);
 	}
-	@Test
-	public void realizarLoginComComUsuarioSenhaCadastrados(){
-		//Clicar no botão de login
-		page.clicarBtnByClass("login");
-		
-		//Realizar login e clicar no botão "Sign in"
-		page.preencherLoginComUsuarioValido();
-		page.clicarBtnById("SubmitLogin");
-		
-		//Assert para confirmar que o usuário está logado
-		Assert.assertTrue(page.contemElementoNaPagina(
-				CadastroPage.PRIMEIRO_NOME
-				+" "+
-				CadastroPage.ULTIMO_NOME));
-	}
+//	@Test
+//	public void realizarLoginComComUsuarioSenhaCadastrados(){
+//		//Clicar no botão de login
+//		page.clicarBtnByClass("login");
+//		
+//		//Realizar login e clicar no botão "Sign in"
+//		page.preencherLoginComUsuarioValido();
+//		page.clicarBtnById("SubmitLogin");
+//		
+//		//Assert para confirmar que o usuário está logado
+//		Assert.assertTrue(page.contemElementoNaPagina(
+//				CadastroPage.PRIMEIRO_NOME
+//				+" "+
+//				CadastroPage.ULTIMO_NOME));
+//	}
 }
